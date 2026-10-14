@@ -1,27 +1,40 @@
-# UploadImage
+# Angular ImgBB Uploader
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Aplicación web para seleccionar una imagen, previsualizarla y subirla a ImgBB desde el navegador. Devuelve la URL de la imagen alojada y muestra notificaciones sobre el resultado de la operación.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Selección y vista previa de archivos locales.
+- Entrada de una API key de ImgBB desde la interfaz.
+- Carga mediante HTTP y formulario multipart.
+- Visualización del enlace devuelto por ImgBB.
+- Notificaciones de selección, validación, éxito y error.
 
-## Code scaffolding
+## Tecnologías
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 17.1, TypeScript, RxJS, Bootstrap 5 y ngx-toastr.
 
-## Build
+## Inicio local
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Necesitas Node.js y npm compatibles con Angular 17, además de una API key de ImgBB para realizar cargas.
 
-## Running unit tests
+```bash
+npm ci
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Abre `http://localhost:4200`, selecciona una imagen, introduce tu API key y ejecuta la carga. La imagen se envía al servicio externo ImgBB.
 
-## Running end-to-end tests
+## Comandos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Comando | Propósito |
+| --- | --- |
+| `npm start` | Servidor de desarrollo |
+| `npm run build` | Compilación en `dist/` |
+| `npm test` | Pruebas con Karma y Jasmine |
 
-## Further help
+## Estructura
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `src/app/app.component.*`: interfaz, vista previa y flujo de carga.
+- `src/app/services/api-upload.service.ts`: integración con la API de ImgBB.
+- `src/app/app.config.ts`: configuración de la aplicación.
